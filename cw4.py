@@ -12,7 +12,7 @@ jedzenie ="Pizza"
 zwierze = "Wombat"
 wynik = 5/7
 print(imie, nazwisko, wiek, jedzenie, zwierze, wynik)
-print(round(wynik,1))
-print(round(wynik,3))
-print(round(wynik,5))
-print(round(wynik,10))
+print(round(wynik, 1))
+print(round(wynik, 3))
+print(round(wynik, 5))
+print(round(wynik, 10))
