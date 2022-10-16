@@ -17,7 +17,7 @@ def sposob_pierwszy(lb,pb):
 
     #jeśli zakres ma nieparzystą długość,
     #to średnia jest jedną z liczb w tym zakresie.
-    #Stąd musimy pominąć (pb+lb)/2
+    #stąd musimy pominąć (pb+lb)/2
 
         else:
             for i in range(int((pb+lb)/2)-2,int((pb+lb)/2)+4): #przy parzystej długości nie ma tego problemu
