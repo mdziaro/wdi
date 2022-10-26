@@ -1,6 +1,6 @@
-a = int(input())
-b = int(input())
-c = int(input())
+a = int(input("Wpisz pierwszą liczbę:"))
+b = int(input("Wpisz drugą liczbę:"))
+c = int(input("Wpisz trzecię liczbę:"))
 
 def Euklides(a,b):
     if b > a:
