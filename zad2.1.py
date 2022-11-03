@@ -8,6 +8,10 @@ liczba = input("Podaj liczbę, w systemie, w którym jest zapisana")
 baza_pocz = int(input("Podaj system, w którym jest zapisana liczba"))
 baza_konc = int(input("Podaj system, na który chcesz zamienić liczbę"))
 
+if liczba[0] == "-" or baza_pocz < 2 or baza_pocz > 16 or baza_konc < 2 or baza_konc > 16:
+    print("Wprowadzono niepoprawne dane")
+    exit(0)
+
 def BaseToTen(baza, liczba):
     wynik = 0
     iteracja = 0
@@ -42,5 +46,17 @@ def ZamianaBaz(baza_pocz, liczba, baza_konc):
         else:
             wynik += chr(tablica[i]-11 + ord("A"))
     return wynik
-print(ZamianaBaz(baza_pocz,liczba,baza_konc))
 
+# sprawdzam, czy w danym systemie w ogóle istnieje taka liczba.
+cyfry = []
+for i in range(len(liczba)):
+    cyfry.append(liczba[i])
+for i in range(len(cyfry)):
+    if not cyfry[i].isnumeric():
+        cyfry[i] = ord(cyfry[i]) - ord("A") + 10
+    if int(cyfry[i]) >= baza_pocz:
+        print("Podana liczba nie istnieje w danym systemie")
+        exit(0)
+    else:
+        continue
+print(ZamianaBaz(baza_pocz, liczba, baza_konc))
