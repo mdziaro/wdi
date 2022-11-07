@@ -27,6 +27,20 @@ if __name__ == "__main__":
 
     """
 
+    def Czy_Pierwsza(liczba):
+        if liczba % 2 == 0 or liczba % 3 == 0:
+            return False
+        else:
+            i = 5
+            while i < liczba**(1/2) + 1:
+                if liczba%(i) == 0 or liczba%(i+2) == 0:
+                    return False
+                else:
+                    i += 6
+            return True
+
+    #Dla krótkich list o dużych wartościach bardziej wydajna będzie funkcja Czy_Pierwsza
+
     def Suma_Podzbiorow(tablica):
         wynik = [0]
         indeks_wyniku = 0
@@ -38,6 +52,7 @@ if __name__ == "__main__":
             else:
                 wynik[indeks_wyniku] += tablica[i]
         return wynik
+    
 
 
     #tworzenie tablicy
@@ -53,12 +68,14 @@ if __name__ == "__main__":
     tablica_z_zerami = []
     for i in range(len(tablica)):
         tablica_z_zerami.append(tablica[i])
+        #if Czy_Pierwsza(tablica[i]):
+        #    tablica_z_zerami.append(0)
         if sito[tablica[i]]:
             tablica_z_zerami.append(0)
 
     print(Suma_Podzbiorow(tablica_z_zerami))
+    
 
 
-# segment kodu wyszukujący liczby pierwsze (sito erastostenesa)
 
 
