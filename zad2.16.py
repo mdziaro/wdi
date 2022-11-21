@@ -74,8 +74,10 @@ if __name__ == "__main__":
             tablica_z_zerami.append(0)
 
     print(Suma_Podzbiorow(tablica_z_zerami))
-    
 
+#[7,45,45,34,53,45,4,3,11,18] -> [7,177,52,11,18]
+#[83,18,68,44,4,60,53,93,78,83] -> [83,247,254]
+# dla nienaturalnej  długości tablicy obsługuje błąd
 
 
 
