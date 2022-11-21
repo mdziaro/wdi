@@ -27,7 +27,6 @@ def BaseToTen(baza, liczba):
         kopia_liczba = kopia_liczba[:-1]
     return wynik
 
-#print(BaseToTen(16, "AC3"))
 def TenToBase(baza, liczba):
     wynik = []
     liczba_kopia = liczba
@@ -60,3 +59,8 @@ for i in range(len(cyfry)):
     else:
         continue
 print(ZamianaBaz(baza_pocz, liczba, baza_konc))
+
+# AC3 (16) -> 10: 2755
+# BB (13) -> 5: 1104
+# 123123 (4) -> 12: 1023
+# 222 (2) -> 10: błąd
