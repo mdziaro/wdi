@@ -1,12 +1,12 @@
-a = int(input())
-b = int(input())
-c = int(input())
+a = int(input("Wpisz pierwszą liczbę:"))
+b = int(input("Wpisz drugą liczbę:"))
+c = int(input("Wpisz trzecię liczbę:"))
 
 def Euklides(a,b):
     if b > a:
-        a,b = b,a
+        a, b = b, a
     while b != 0:
-        a,b = b, a % b
+        a, b = b, a % b
     return a
 
 def NWD(a,b,c):
