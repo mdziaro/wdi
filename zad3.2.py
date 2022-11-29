@@ -30,8 +30,30 @@ def sprawdzanie_dlugosci_macierzy(macierz):
 #print("Stwórz drugą macierz!")
 #macierz2 = tworzenie_macierzy([],0)
 #sprawdzanie_dlugosci_macierzy(macierz2)
-macierz1 = [['1', '3', '4'], ['1', '1', '1'], ['1', '2', '3']]
-macierz2 = [['2', '3', '4','2'], ['1', '3', '1','4'], ['1', '2', '3','4']]
+
+#macierz1 = [
+#['1', '3', '4'],
+#['1', '1', '1'],
+#['1', '2', '3']
+# ]
+#macierz2 = [
+# ['2', '3', '4','2'],
+# ['1', '3', '1','4'],
+# ['1', '2', '3','4']
+# ]
+
+
+macierz1 = [
+    [1, 1, 0],
+    [1, 0, 1],
+    [1, -1, -1]
+]
+
+macierz2 = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
 
 def zmien_znaki_na_liczby(macierz):
     for i in range(len(macierz)):
@@ -54,8 +76,6 @@ def iloczyn(tab1, tab2):
                 wynik[i][j] += tab1[i][k]*tab2[k][j]
 
     return wynik
-
-print("Iloczyn tych macierzy to: " + str(iloczyn(macierz1, macierz2)))
 
 
 def calc_det(matrix):
@@ -94,17 +114,17 @@ def calc_det(matrix):
 
     return su
 
+def mnozenie_skalarne(macierz, skalar):
+    for i in range(len(macierz)):
+        for j in range(len(macierz[0])):
+            macierz[i][j] = skalar * macierz[i][j]
+    return macierz
 
-matrix = [
-    [1, 1, 0],
-    [1, 0, 1],
-    [1, -1, -1]
-]
-
-matrix = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-    [13, 14, 15, 16]
-]
-print(calc_det(matrix))
+print("Iloczyn tych macierzy to: " + str(iloczyn(macierz1, macierz2)))
+wyznacznik1 = calc_det(macierz1)
+wyznacznik2= calc_det(macierz2)
+print("Wyznacznik pierwszej macierzy to: " + str(wyznacznik1))
+print("Wyznacznik drugiej macierzy to: " + str(wyznacznik2))
+suma_wyznacznikow = wyznacznik1+wyznacznik2
+print("Pierwsza macierz pomnożona przez sumę wyznaczników to: " + str(mnozenie_skalarne(macierz1,suma_wyznacznikow)))
+print("Druga macierz pomnożona przez sumę wyznaczników to: " + str(mnozenie_skalarne(macierz2,suma_wyznacznikow)))
