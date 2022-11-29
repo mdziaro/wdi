@@ -1,7 +1,5 @@
 import os
-import numpy
 import hashlib
-import binascii
 
 with open('home/my_hashed_password.txt') as f:
     user_list = [tuple(map(str, i.split(' '))) for i in f]
