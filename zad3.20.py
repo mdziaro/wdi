@@ -43,6 +43,10 @@ def przywitanie():
         przywitanie()
 
 def nazwa():
-    pass
-    return
+    path = input("Podaj ścieżkę pliku, którego nazwę chcesz zmienić: ")
+    name = input("Jaką nazwę chcesz nadać plikowi?")
+    command = str("copy " + path + " " + name)
+    os.system(command)
+    print("Operacja ukończona pomyślnie!\n\n")
+    przywitanie()
 logowanie()
