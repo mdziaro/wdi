@@ -1,13 +1,27 @@
 import os
 import numpy
 import hashlib
+import binascii
 
-numpy.genfromtxt(r'/home/my_hashed_password.txt', delimiter=' ')
+with open('home/my_hashed_password.txt') as f:
+    user_list = [tuple(map(str, i.split(' '))) for i in f]
 
 
 def logowanie():
-    user = input("Podaj nazwę użytkownika: ")
+    username = input("Podaj nazwę użytkownika: ") # user - password || admin - admin
+    password = hashlib.sha256()
     haslo = input("Podaj hasło: ")
+    password.update(bytes(haslo, 'utf-8'))
+    password = password.hexdigest()
+    for user in range(len(user_list)):
+        if user_list[user][0] == username:
+            if user_list[user][1][:-1] == password:
+                print("Zalogowano pomyslnie")
+                przywitanie()
+            else:
+                break
+    print("Nazwa użytkownika lub hasło są nieprawidłowe.")
+    logowanie()
 
 
 
