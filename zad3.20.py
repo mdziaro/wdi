@@ -43,10 +43,34 @@ def przywitanie():
         przywitanie()
 
 def nazwa():
-    path = input("Podaj ścieżkę pliku, którego nazwę chcesz zmienić: ")
-    name = input("Jaką nazwę chcesz nadać plikowi?")
-    command = str("copy " + path + " " + name)
+    path = input("Podaj ścieżkę pliku, którego nazwę chcesz zmienić (destination/file.ext): ")
+    name = input("Jaką nazwę chcesz nadać plikowi? (pamiętaj o rozszerzeniu!) ")
+    command = str("rename " + path + " " + name)
     os.system(command)
     print("Operacja ukończona pomyślnie!\n\n")
     przywitanie()
+
+def kopiowanie():
+    path = input("Podaj ścieżkę pliku, który chcesz skopiować (destination/file.ext): ")
+    path2 = input("Podaj ścieżkę folderu, do którego chcesz skopiować plik (destination/: ")
+    name = input("Podaj nową nazwę pliku (file.ext): ")
+    command = str("copy " + path + " " + path2+name)
+    print(command)
+    os.system(command)
+    print("Operacja ukończona pomyślnie!\n\n")
+    przywitanie()
+
+def przenoszenie():
+    path = input("Podaj ścieżkę pliku, który chcesz przenieść (destination/file.ext: ")
+    path2 = input("Podaj ścieżkę docelową ścieżkę pliku (destination/file.ext: ")
+    os.replace(path, path2)
+    print("Operacja ukończona pomyślnie!\n\n")
+    przywitanie()
+
+def usuwanie():
+    path = input("Podaj ścieżkę pliku, który chcesz usunąć (destination/file.ext: ")
+    os.system("del " + path)
+    print("Operacja ukończona pomyślnie!\n\n")
+    przywitanie()
+
 logowanie()
