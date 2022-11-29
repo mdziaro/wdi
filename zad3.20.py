@@ -1,16 +1,13 @@
 import os
+import numpy
 import hashlib
 
-plik = open("/home/my_hashed_password.txt")
-hasla = plik.readlines()
-plik.close()
-
+numpy.genfromtxt(r'/home/my_hashed_password.txt', delimiter=' ')
 
 
 def logowanie():
     user = input("Podaj nazwę użytkownika: ")
     haslo = input("Podaj hasło: ")
-    print(hasla)
 
 
 
