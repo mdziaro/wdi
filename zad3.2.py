@@ -136,5 +136,5 @@ wyznacznik2= calc_det(macierz2)
 print("Wyznacznik pierwszej macierzy to: " + str(wyznacznik1))
 print("Wyznacznik drugiej macierzy to: " + str(wyznacznik2))
 suma_wyznacznikow = wyznacznik1+wyznacznik2
-print("Pierwsza macierz pomnożona przez sumę wyznaczników to: " + str(mnozenie_skalarne(macierz1,suma_wyznacznikow)))
-print("Druga macierz pomnożona przez sumę wyznaczników to: " + str(mnozenie_skalarne(macierz2,suma_wyznacznikow)))
+print("Pierwsza macierz pomnożona przez sumę wyznaczników to: " + str(mnozenie_skalarne(macierz1, suma_wyznacznikow)))
+print("Druga macierz pomnożona przez sumę wyznaczników to: " + str(mnozenie_skalarne(macierz2, suma_wyznacznikow)))
