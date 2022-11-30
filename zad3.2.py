@@ -2,7 +2,7 @@ import random
 
 def tworzenie_macierzy(dotychczasowa_macierz, nr_wiersza):
     nr_wiersza += 1
-    wiersz = input("Wypisz liczby w "+ str(nr_wiersza)+ " wierszu macierzy, oddzielając liczby przecinkiem: ")
+    wiersz = input("Wypisz liczby w "+ str(nr_wiersza)+ ". wierszu macierzy, oddzielając liczby przecinkiem: ")
     wiersz = wiersz.split(",")
     dotychczasowa_macierz.append(wiersz)
     wybor = input("Czy chcesz dodać nowy wiersz? Wpisz T/N: ")
@@ -24,36 +24,15 @@ def sprawdzanie_dlugosci_macierzy(macierz):
         return True
     return True
 
-#print("Stwórz pierwszą macierz!")
-#macierz1 = tworzenie_macierzy([],0)
-#sprawdzanie_dlugosci_macierzy(macierz1)
-#print("Stwórz drugą macierz!")
-#macierz2 = tworzenie_macierzy([],0)
-#sprawdzanie_dlugosci_macierzy(macierz2)
-
-#macierz1 = [
-#['1', '3', '4'],
-#['1', '1', '1'],
-#['1', '2', '3']
-# ]
-#macierz2 = [
-# ['2', '3', '4','2'],
-# ['1', '3', '1','4'],
-# ['1', '2', '3','4']
-# ]
+print("Stwórz pierwszą macierz!")
+macierz1 = tworzenie_macierzy([],0)
+sprawdzanie_dlugosci_macierzy(macierz1)
+print("Stwórz drugą macierz!")
+macierz2 = tworzenie_macierzy([],0)
+sprawdzanie_dlugosci_macierzy(macierz2)
 
 
-macierz1 = [
-    [1, 1, 0],
-    [1, 0, 1],
-    [1, -1, -1]
-]
 
-macierz2 = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-]
 
 def zmien_znaki_na_liczby(macierz):
     for i in range(len(macierz)):
@@ -64,6 +43,33 @@ def zmien_znaki_na_liczby(macierz):
 macierz1 = zmien_znaki_na_liczby(macierz1)
 macierz2 = zmien_znaki_na_liczby(macierz2)
 #########################################
+
+
+"""
+macierz1 = [
+[1, 3, 4],
+[1, 1, 1],
+[1, 2, 3]
+]macierz2 = [
+[2, 3, 4,2],
+[1, 3, 1,4],
+[1, 2, 3,4]
+]
+"""
+
+"""
+macierz1 = [
+   [1, 1, 0],
+   [1, 0, 1],
+   [1, -1, -1]
+]
+macierz2 = [
+   [1, 2, 3, 4],
+   [5, 6, 7, 8],
+   [9, 10, 11, 12],
+]
+"""
+
 dlugosc1 = len(macierz1[0])
 wysokosc1 = len(macierz1)
 dlugosc2 = len(macierz2[0])
@@ -120,7 +126,11 @@ def mnozenie_skalarne(macierz, skalar):
             macierz[i][j] = skalar * macierz[i][j]
     return macierz
 
-print("Iloczyn tych macierzy to: " + str(iloczyn(macierz1, macierz2)))
+
+if wysokosc2 == dlugosc1:
+    print("Iloczyn tych macierzy to: " + str(iloczyn(macierz1, macierz2)))
+else:
+    print("Tych macierzy nie da się pomnożyć.")
 wyznacznik1 = calc_det(macierz1)
 wyznacznik2= calc_det(macierz2)
 print("Wyznacznik pierwszej macierzy to: " + str(wyznacznik1))
