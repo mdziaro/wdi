@@ -1,4 +1,3 @@
-dimension = 10
 def find_checking_knights(positions):
     checking_knights = []
 
@@ -47,7 +46,7 @@ def visualize_knights(positions, dim):
     plt.show()
 
 # Tests:
-
+dimension = 10
 #positions = [(1, 2), (2, 4), (3, 5)] # szachują się wzajemnie
 #positions = [(1, 2), (2, 3), (3, 4)] # żaden się nie szachuje
 #positions = [(1, 2), (2, 1), (3, 3)] # jeden jest szachowany przez dwa jednocześnie
