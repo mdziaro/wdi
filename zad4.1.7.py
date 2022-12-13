@@ -1,6 +1,4 @@
-positions = [(1, 2), (2, 4), (3, 6), (4, 8), (6, 1), (7, 3), (8, 5), (91,91), (92,93)]
-
-
+dimension = 10
 def find_checking_knights(positions):
     checking_knights = []
 
@@ -16,7 +14,6 @@ def find_checking_knights(positions):
             if abs(r1 - r2) == 2 and abs(c1 - c2) == 1 or abs(r1 - r2) == 1 and abs(c1 - c2) == 2:
                 checking_knights.append((r1, c1))
                 checking_knights.append((r2, c2))
-
     return checking_knights
 
 
@@ -49,14 +46,34 @@ def visualize_knights(positions, dim):
 
     plt.show()
 
-# Positions of knights on the chessboard
+# Tests:
+
+#positions = [(1, 2), (2, 4), (3, 5)] # szachują się wzajemnie
+#positions = [(1, 2), (2, 3), (3, 4)] # żaden się nie szachuje
+#positions = [(1, 2), (2, 1), (3, 3)] # jeden jest szachowany przez dwa jednocześnie
+
+#test losowy:
+'''
+import random
+positions = []
+for _ in range(random.randint(0, 100)):
+    temp = ((random.randint(0, dimension-1), random.randint(0, dimension-1)))
+    if temp not in positions:
+        positions.append(temp)
+print(positions)
+'''
 
 # Find the positions of knights that check each other
+
 checking_knights = find_checking_knights(positions)
-print(checking_knights)
+checking_knights_pairs = []
+for i in range(0, len(checking_knights)-1, 2):
+     checking_knights_pairs.append([checking_knights[i], checking_knights[i+1]])
+print("Szachujące się pary: ", checking_knights_pairs)
+
 
 # Visualize the positions of the knights on the chessboard
-#visualize_knights(positions)
+visualize_knights(positions, dimension)
 
 # Visualize the positions of the knights that check each other on the chessboard
-visualize_knights(checking_knights, 100)
+visualize_knights(checking_knights, dimension)
