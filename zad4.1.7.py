@@ -24,7 +24,7 @@ def visualize_knights(positions, dim):
     # Create a dimxdim grid of zeros
     grid = [[0 for _ in range(dim)] for _ in range(dim)]
 
-    # Loop through the knight positions and set the grid value at those positions to 1
+    # colour the board in a checker pattern
 
     for i in range(len(grid)):
         for j in range(len(grid[i])):
@@ -33,10 +33,9 @@ def visualize_knights(positions, dim):
             else:
                 grid[i][j] = 1
 
-
-    # Use matplotlib to visualize the grid
     plt.rcParams["figure.figsize"] = (10*dim, 10 * dim)
     plt.matshow(grid, cmap="gray")
+    #place knights in the corresponding positions
     for r, c in positions:
         if r%2 == c%2:
             plt.text(r - 0.5, c - 0.6, "\u2658", fontsize=(1000/dim))
